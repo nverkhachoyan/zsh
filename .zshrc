@@ -15,3 +15,5 @@ export HOMEBREW_NO_ENV_HINTS=true
 for file in $HOME/.dotfiles/projects/*.zsh(N); do
     source "$file"
 done
+
+. ./oh-my-zsh.zsh

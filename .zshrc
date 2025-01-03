@@ -1,9 +1,6 @@
 DOTFILES="$HOME/.dotfiles"
 CONFIG="$DOTFILES/.config"
-
-# Oh My Zsh Configuration
-export ZSH="$DOTFILES/submodules/oh-my-zsh"
-export ZSH_CUSTOM="$DOTFILES/.config/oh-my-zsh"
+export ZSH_CUSTOM="$DOTFILES/zsh/custom"
 
 # Source all zsh configurations
 for config_file (~/.dotfiles/zsh/*.zsh(N)) source $config_file
@@ -16,4 +13,9 @@ for file in $HOME/.dotfiles/projects/*.zsh(N); do
     source "$file"
 done
 
-. ./oh-my-zsh.zsh
+# Plugins
+for file in $ZSH_CUSTOM/plugins/*/*.plugin.zsh; do
+    echo "Init plugin: $file"
+    source $file
+done
+

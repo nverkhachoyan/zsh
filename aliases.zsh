@@ -12,3 +12,6 @@ alias la='ls -A'
 # Docker shortcuts
 alias dc='docker-compose'
 alias dps='docker ps' 
+
+# Tmux
+alias tmux="tmux attach || tmux new"

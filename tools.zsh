@@ -15,8 +15,6 @@ if [ -s "$NVM_DIR/bash_completion" ]; then
 fi 
 
 
-
-
 # Deno Configuration - Lazy Loading
 deno() {
     unset -f deno

@@ -18,4 +18,3 @@ for file in $ZSH_CUSTOM/plugins/*/*.plugin.zsh; do
     echo "Init plugin: $file"
     source $file
 done
-

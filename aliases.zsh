@@ -15,3 +15,10 @@ alias dps='docker ps'
 
 # Tmux
 alias tmux="tmux attach || tmux new"
+
+# Git
+alias gst="git status"
+alias gcm="git commit -m"
+alias ga="git add"
+alias gaa="git add --all"
+alias gp="git push"

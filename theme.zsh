@@ -13,9 +13,3 @@ git_prompt_info='%F{074}$vcs_info_msg_0_%f'
 
 PROMPT="╭${current_dir} ${git_prompt_info}
 ╰${user_symbol} "
-
-#     PROMPT="╭${user_host} ${current_dir} $(git_prompt_info)
-# ╰${user_symbol} "
-#
-#
-# decent blue 074

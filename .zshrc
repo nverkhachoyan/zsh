@@ -1,21 +1,22 @@
 DOTFILES="$HOME/.dotfiles"
 CONFIG="$DOTFILES/.config"
-export ZSH_CUSTOM="$DOTFILES/zsh/custom"
+
+export ZSH_CUSTOM="$DOTFILES/zsh/plugins"
 export HOMEBREW_NO_ENV_HINTS=true
 
-# Editor Configuration
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
-else
-    export EDITOR='nvim'
-fi 
+# source all zsh files
+for config_file ($DOTFILES/zsh/*.zsh(N)) source $config_file
 
-# Source all zsh configurations
-for config_file (~/.dotfiles/zsh/*.zsh(N)) source $config_file
-
-# Plugins
-for file in $ZSH_CUSTOM/plugins/*/*.plugin.zsh; do
+# plugins
+for file in $ZSH_CUSTOM/*/*.plugin.zsh; do
     source $file
 done
 
-source "$ZSH_CUSTOM/themes/thematic.zsh"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/Users/nverkhachoyan/.platformio/penv/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+export PATH="/usr/local/anaconda3/bin:$PATH"
+export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+export GHOSTTY_CONFIG_FILE="$HOME/.config/ghostty/config"
+

@@ -22,3 +22,6 @@ alias gcm="git commit -m"
 alias ga="git add"
 alias gaa="git add --all"
 alias gp="git push"
+
+# Dev directory alias
+alias dev="cd ~/Projects/"

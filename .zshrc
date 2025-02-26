@@ -1,22 +1,13 @@
-DOTFILES="$HOME/.dotfiles"
-CONFIG="$DOTFILES/.config"
+#!/bin/zsh
 
-export ZSH_CUSTOM="$DOTFILES/zsh/plugins"
-export HOMEBREW_NO_ENV_HINTS=true
+export DOTFILES="$HOME/.dotfiles"
+export ZSH_CONFIG="$DOTFILES/zsh/config"
 
-# source all zsh files
-for config_file ($DOTFILES/zsh/*.zsh(N)) source $config_file
-
-# plugins
-for file in $ZSH_CUSTOM/*/*.plugin.zsh; do
-    source $file
+for config in env paths shell theme aliases plugins; do
+    source "$ZSH_CONFIG/core/$config.zsh"
 done
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/Users/nverkhachoyan/.platformio/penv/bin:$PATH"
+# Local config if exists
+[[ -f "$HOME/.local/bin/env" ]] && source "$HOME/.local/bin/env"
 
-. "$HOME/.local/bin/env"
-export PATH="/usr/local/anaconda3/bin:$PATH"
-export PATH="/opt/homebrew/anaconda3/bin:$PATH"
-export GHOSTTY_CONFIG_FILE="$HOME/.config/ghostty/config"
 
